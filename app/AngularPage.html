@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <title>Home - Routed</title>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="myController">
+
+ <input type="text" ng-model="name"> <br>
+    <p ng-bind="name"></p>
+
+    </div>
+<br/>
+<br/>
+<div ng-app="myFormApp" ng-controller="myFormController" >
+
+        Name  : &nbsp; &nbsp; <input type="text" ng-model="formName"> <br/>
+        Country : <input type="text" ng-model="formCountry"> <br/>
+
+        <p> {{formName +" "+ formCountry}} </p>
+
+</div>
+
+<script>
+    var app = angular.module('myApp',[]);
+    app.controller('myController',function($scope){
+       $scope.name = "Viranja";
+    });
+
+    var myFormApp = angular.module('myFormApp', []);
+    myFormApp.controller('myFormController', function($formInstance){
+       $formInstance.formName = "Viranja";
+        $formInstance.formCountry = "Sri_Lanka";
+    });
+</script>
+
+</body>
+</html>
